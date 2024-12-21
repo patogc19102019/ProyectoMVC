@@ -76,3 +76,14 @@ class VentanaGanancias:
         for caja in pesos_cajas:
             self.salida.insert(tk.END, f"Caja ID: {caja['id']} | Pesos: {caja['pesos']:.2f}\n")
         self.salida.configure(state=tk.DISABLED)
+
+    def mostrar_moneda_mas_vendida(self):
+        moneda, cantidad = self.controlador.obtener_moneda_mas_vendida()
+        self.salida.configure(state=tk.NORMAL)
+        self.salida.delete(1.0, tk.END)
+        self.salida.insert(tk.END, "=== Moneda Más Vendida ===\n")
+        if moneda:
+            self.salida.insert(tk.END, f"Moneda: {moneda} | Cantidad vendida: {cantidad:.2f}\n")
+        else:
+            self.salida.insert(tk.END, "No hay transacciones registradas.\n")
+        self.salida.configure(state=tk.DISABLED)

@@ -18,7 +18,7 @@ class ListController:
 
     def retorno(self):
         self.view.switch("home")
-           
+        
     def close(self):
         self.view.stop_mainloop()
         

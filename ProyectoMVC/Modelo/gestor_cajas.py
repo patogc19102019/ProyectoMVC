@@ -36,3 +36,14 @@ class GestorCajas:
                 ganancias_por_moneda[transaccion.moneda] = 0
             ganancias_por_moneda[transaccion.moneda] += transaccion.ganancia
         return ganancias_por_moneda
+
+    def obtener_moneda_mas_vendida(self):
+        ventas_por_moneda = {}
+        for transaccion in self.transacciones:
+            if transaccion.moneda not in ventas_por_moneda:
+                ventas_por_moneda[transaccion.moneda] = 0
+            ventas_por_moneda[transaccion.moneda] += transaccion.cantidad
+        if not ventas_por_moneda:
+            return None, 0
+        moneda_mas_vendida = max(ventas_por_moneda, key=ventas_por_moneda.get)
+        return moneda_mas_vendida, ventas_por_moneda[moneda_mas_vendida]
