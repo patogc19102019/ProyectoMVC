@@ -8,7 +8,7 @@ Created on Sat Aug  3 22:59:13 2024
 class ObservableModel:
     
     def __init__(self):
-        self._event_listeners = {}
+        self._event_listeners = {} 
 
     def add_event_listener(self, event, fn):
         try:
