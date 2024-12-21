@@ -38,7 +38,7 @@ class Controller:
                 
         self.model.gestor_datos.add_event_listener(
             "lista_datos", self.datos_list_listener)
-              
+        
         self.model.gestor_datos.add_event_listener(
             "retorno_menu_registro", self.datos_retorno_register_listener)
         
@@ -69,8 +69,8 @@ class Controller:
         self.list_caja_controller.update_view()
 
     def cajas_consulta_pesos_listener(self, data):
-         self.cajas_controller.update_view() 
-         self.view.switch("cajas")
+        self.cajas_controller.update_view() 
+        self.view.switch("cajas")
 
     def start(self):
         self.view.switch("signin")
