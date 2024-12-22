@@ -56,3 +56,15 @@ class GestorCajas:
     def obtener_tipos_de_cambio(self):
         """Devuelve los tipos de cambio registrados."""
         return self.tipos_de_cambio
+
+    def registrar_pesos(self, id_caja, pesos):
+        """Registra la cantidad de pesos disponibles en una caja."""
+        for caja in self.cajas:
+            if caja["id"] == id_caja:
+                caja["pesos"] = pesos
+                return True
+        return False
+
+    def obtener_cajas_habilitadas(self):
+        """Devuelve las cajas que están habilitadas."""
+        return [caja for caja in self.cajas if caja["estado"] == "habilitada"]
