@@ -36,7 +36,7 @@ class SignInView(Frame):
         self.signup_btn = Button(self, text="Crear cuenta")
         self.signup_option_label.grid(row=4, column=1, sticky="w")
         self.signup_btn.grid(row=5, column=1, sticky="w")
-             
+        
         self.close_btn = Button(self, text="Cerrar sistema")
         self.close_btn.grid(row=7, column=1, padx=0, pady=10, sticky="w")
         

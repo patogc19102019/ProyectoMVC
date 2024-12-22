@@ -29,8 +29,8 @@ class ConectorBD:
             return 0, "Conexión exitosa"
         except Exception as e:
             print('DRIVER={MySQL};SERVER=' + self.getHost() +
-                  ';DATABASE=' + self.getBasedatos() + ';UID=' + self.getUser() +
-                  ';PWD=' + self.getPassword(), "Falló Conexión:", str(e))  # Mensaje de error
+                    ';DATABASE=' + self.getBasedatos() + ';UID=' + self.getUser() +
+                    ';PWD=' + self.getPassword(), "Falló Conexión:", str(e))  # Mensaje de error
             return 66, e
 
     def comprobarConexion(self):

@@ -24,7 +24,7 @@ class SignInController:
 
     def signup(self):
         self.view.switch("signup")
-           
+        
     def close(self):
         self.view.stop_mainloop()
         
