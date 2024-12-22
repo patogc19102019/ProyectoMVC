@@ -15,6 +15,7 @@ class GestorCajas:
             {"id": 3, "estado": "habilitada", "pesos": 10000},
         ]
         self.transacciones = []
+        self.tipos_de_cambio = {}
 
     def obtener_pesos_cajas(self):
         """Devuelve la lista de todas las cajas con su ID y pesos."""
@@ -47,3 +48,11 @@ class GestorCajas:
             return None, 0
         moneda_mas_vendida = max(ventas_por_moneda, key=ventas_por_moneda.get)
         return moneda_mas_vendida, ventas_por_moneda[moneda_mas_vendida]
+
+    def registrar_tipo_cambio(self, moneda, tasa_cambio):
+        """Registra un nuevo tipo de cambio."""
+        self.tipos_de_cambio[moneda] = tasa_cambio
+
+    def obtener_tipos_de_cambio(self):
+        """Devuelve los tipos de cambio registrados."""
+        return self.tipos_de_cambio
